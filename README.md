@@ -1,0 +1,2 @@
+# ulanganharianinformatika
+khusus smp it

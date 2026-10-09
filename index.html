@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Ulangan Harian Informatika SMP Kelas 7</title>
+<style>
+:root{--bg:#0a0618;--p:#8b3dff;--o:#ff7a1a;--t:#efe8ff;--m:#a79bc9;--c:rgba(32,17,64,.75);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#2a0f5e,var(--bg) 60%);color:var(--t);font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif;min-height:100vh;overflow-x:hidden}
+.floor{position:fixed;left:-50%;right:-50%;bottom:0;height:55vh;background:linear-gradient(var(--p) 1px,transparent 1px) 0 0/60px 60px,linear-gradient(90deg,var(--p) 1px,transparent 1px) 0 0/60px 60px;transform:perspective(400px) rotateX(65deg);transform-origin:bottom;opacity:.22;animation:fl 4s linear infinite;z-index:-1}
+@keyframes fl{to{background-position:0 60px,0 60px}}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+.kop{text-align:center;padding:12px 0}.kop small{color:var(--o);letter-spacing:3px;font-weight:700}
+h1{font-size:clamp(20px,4.5vw,32px);margin:6px 0;background:linear-gradient(90deg,var(--o),var(--p),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 30px rgba(255,122,26,.3)}
+.sub{color:var(--m);font-size:13px}
+.scene{perspective:600px;height:110px;display:grid;place-items:center}
+.cube{width:70px;height:70px;position:relative;transform-style:preserve-3d;animation:rot 9s linear infinite}
+@keyframes rot{to{transform:rotateX(360deg) rotateY(360deg)}}
+.cube i{position:absolute;inset:0;border:2px solid var(--o);background:rgba(139,61,255,.25);display:grid;place-items:center;font:700 20px monospace;color:var(--o);box-shadow:0 0 18px rgba(255,122,26,.5) inset;font-style:normal}
+.cube i:nth-child(1){transform:translateZ(35px)}.cube i:nth-child(2){transform:rotateY(90deg) translateZ(35px)}.cube i:nth-child(3){transform:rotateY(180deg) translateZ(35px)}.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(35px)}.cube i:nth-child(5){transform:rotateX(90deg) translateZ(35px)}.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(35px)}
+.card{background:var(--c);border:1px solid rgba(139,61,255,.5);border-radius:16px;padding:18px;margin:12px 0;backdrop-filter:blur(8px);box-shadow:0 10px 40px rgba(0,0,0,.4),0 0 0 1px rgba(255,122,26,.1) inset;transition:transform .15s}
+.tilt{transform-style:preserve-3d}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.menu{cursor:pointer;text-align:center}.menu b{display:block;font-size:18px;color:var(--o)}.menu:hover{border-color:var(--o)}
+button,.btn{font:inherit;font-weight:700;border:0;border-radius:10px;padding:10px 18px;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--p),#5b1fd1);box-shadow:0 4px 18px rgba(139,61,255,.45)}
+button.or{background:linear-gradient(135deg,var(--o),#e0480b);box-shadow:0 4px 18px rgba(255,122,26,.4)}button.gh{background:transparent;border:1px solid var(--p);box-shadow:none}
+button:disabled{opacity:.4;cursor:not-allowed}
+input,select,textarea{width:100%;font:inherit;color:var(--t);background:rgba(10,6,24,.8);border:1px solid var(--p);border-radius:10px;padding:10px;margin:4px 0 10px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--o)}
+.timer{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;background:rgba(10,6,24,.92);border:1px solid var(--o);border-radius:12px;padding:8px 14px;margin-bottom:8px}
+#tm{font:700 24px monospace;color:var(--o)}
+.nav{display:flex;flex-wrap:wrap;gap:6px}.nav button{width:38px;padding:6px 0;background:#2b2342;box-shadow:none}.nav .ok{background:var(--p)}.nav .rg{background:var(--o)}.nav .cu{outline:2px solid #fff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;background:rgba(139,61,255,.15);border:1px solid var(--p);box-shadow:none}.opt.sel{background:var(--p);border-color:var(--o)}
+.warn{background:rgba(255,122,26,.15);border:1px solid var(--o);border-radius:10px;padding:8px 12px;font-size:13px}
+.ov{position:fixed;inset:0;background:rgba(5,2,15,.85);display:grid;place-items:center;z-index:9;padding:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid rgba(139,61,255,.4);padding:6px;text-align:left;vertical-align:top}th{color:var(--o)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.big{font:700 40px monospace;letter-spacing:8px;color:var(--o);text-align:center}
+.bar{height:10px;background:#2b2342;border-radius:6px;overflow:hidden}.bar b{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--o))}
+.ok2{color:#5dff9a}.no{color:#ff6b6b}.sc{font:700 32px monospace;color:var(--o)}
+body.lock{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}body.lock input,body.lock textarea{-webkit-user-select:text;user-select:text}#fsb{display:none}#print{display:none}
+@media print{body{background:#fff;color:#000}body>*:not(#print){display:none!important}#print{display:block;color:#000;font:12px/1.4 serif}#print table td,#print table th{border:1px solid #888;color:#000}#print h2,#print h3{color:#000}}
+</style></head><body><div class="floor"></div><div class="wrap" id="app"></div><div id="print"></div>
+<script>
+const $=s=>document.querySelector(s),A=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const fmt=ms=>{ms=Math.max(0,ms);const s=Math.ceil(ms/1000);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+const words=t=>(t.trim().match(/\S+/g)||[]).length;
+const grade=n=>n>=90?'A':n>=80?'B':n>=70?'C':n>=60?'D':'E';
+const mx=i=>+((i.pedoman_penskoran.match(/Maksimal\s*(\d+)/)||[])[1]||20);
+const API='https://script.google.com/macros/s/AKfycbyl5H1ZinWTbupq5fr4ppPqTxxP9PhD14iIImJ8q7FnECjAAP4ofRvrs0ZBDqAowAu6/exec';
+async function api(a,d){const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(Object.assign({action:a},d))});return r.json()}
+let db=true,PASS='',user,owner=false,Q=null,CFG=null,S=null,SUBS=[],unsub=null,V='';
+try{S=JSON.parse(localStorage.getItem('ujian_s'))}catch(e){}
+const save=()=>{try{localStorage.setItem('ujian_s',JSON.stringify(S))}catch(e){}};
+const kop=()=>`<div class="kop"><small>SMP IT INSAN MULIA</small><div class="scene"><div class="cube"><i>AI</i><i>01</i><i>CPU</i><i>10</i><i>{ }</i><i>WWW</i></div></div><h1>ULANGAN HARIAN INFORMATIKA SMP KELAS 7</h1><div class="sub">Tahun Ajaran 2026/2027 • Guru: Rizki Eka Damayanti, S.Kom</div></div>`;
+const kopP=()=>`<div style="text-align:center"><h2 style="margin:0">SMP IT INSAN MULIA</h2><b>ULANGAN HARIAN INFORMATIKA SMP KELAS 7</b><br>Tahun Ajaran 2026/2027 • Guru: Rizki Eka Damayanti, S.Kom<hr></div>`;
+document.addEventListener('mousemove',e=>{const c=e.target.closest?.('.tilt');if(c){const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg)`}});
+document.addEventListener('mouseout',e=>{const c=e.target.closest?.('.tilt');if(c)c.style.transform=''});
+function notice(msg,cb){const d=document.createElement('div');d.className='ov';d.innerHTML=`<div class="card" style="max-width:420px"><p>${msg}</p><button class="or">OK</button></div>`;d.querySelector('button').onclick=()=>{d.remove();cb&&cb()};document.body.appendChild(d)}
+async function init(){}
+async function loadCfg(){}
+function home(){V='home';clearInterval(window.TI);
+ A.innerHTML=kop()+`<div class="grid3"><div class="card menu tilt" onclick="mulai()"><b>▶ Mulai Ujian</b>Isi identitas &amp; token</div><div class="card menu tilt" onclick="cari()"><b>★ Lihat Hasil</b>Dengan nama lengkap / token</div><div class="card menu tilt" onclick="PASS?guru():guru()"><b>⚙ Halaman Guru</b>Soal, token &amp; penilaian</div></div>`+(S&&S.phase!=='done'?`<div class="card"><b>Ujian atas nama ${esc(S.name)} masih berlangsung.</b> <button class="or" onclick="run()">Lanjutkan</button></div>`:'')+(db?'':'<p class="sub" style="text-align:center">Menyambungkan penyimpanan data…</p>');}
+function mulai(){V='mulai';
+ A.innerHTML=kop()+`<div class="card"><h3>Identitas Siswa</h3><label>Nama Lengkap</label><input id="n" autocomplete="off"><label>Kelas</label><input id="k" placeholder="contoh: 7A"><label>Token Ujian (6 angka)</label><input id="t" maxlength="6" inputmode="numeric"><div class="warn">PG 15 menit → Menjodohkan 10 menit → Essay 15 menit. Timer tidak bisa diulang.</div><p><button class="or" onclick="begin()">Mulai Mengerjakan</button> <button class="gh" onclick="home()">Kembali</button></p></div>`}
+async function begin(){goFs();
+ const name=$('#n').value.trim(),kelas=$('#k').value.trim(),tok=$('#t').value.trim();
+ if(!name||!kelas||!/^\d{6}$/.test(tok))return notice('Lengkapi nama, kelas, dan token 6 angka.');
+ if(API.startsWith('PASTE'))return notice('Alamat API belum diisi. Hubungi guru.');
+ let r;try{r=await api('start',{name,kelas,token:tok})}catch(e){return notice('Gagal terhubung ke server. Periksa internet.')}
+ if(!r.ok)return notice(r.msg);
+ Q=r.q;S={id:r.id,name,kelas,token:tok,phase:'mc',end:Date.now()+15*60000,cur:0,mc:{},mj:{},es:{},q:r.q};save();run()}
+async function run(){goFs();if(!Q&&S&&S.q)Q=S.q;if(!Q)return notice('Data soal tidak ditemukan. Mulai ulang ujian.');V='exam';clearInterval(window.TI);window.TI=setInterval(tick,500);draw()}
+function tick(){if(!S||S.phase==='done')return;const l=S.end-Date.now(),e=$('#tm');if(e)e.textContent=fmt(l);if(l<=0)expire()}
+function setPh(p,m){S.phase=p;S.end=Date.now()+m*60000;S.cur=0;save();draw()}
+function expire(){const p=S.phase;if(p==='mc'){S.phase='x';notice('Waktu Pilihan Ganda habis. Lanjut ke soal Menjodohkan.',()=>setPh('mj',10))}else if(p==='mj'){S.phase='x';notice('Waktu Menjodohkan 10 menit selesai. Anda langsung diarahkan ke soal Essay.',()=>setPh('es',15))}else if(p==='es'){S.phase='x';notice('Waktu Essay habis. Jawaban dikirim otomatis.',()=>submit(true))}}
+const hdr=(t)=>`<div class="timer"><div><b>${esc(S.name)}</b> • ${esc(S.kelas)}<br><span class="sub">${t}</span></div><div id="tm">${fmt(S.end-Date.now())}</div></div>`;
+function draw(){const p=S.phase;if(p==='mc')dMC();else if(p==='mj')dMJ();else if(p==='es')dES();else if(p==='done')resView(S.result)}
+function dMC(){const q=Q.pilihan_ganda,it=q[S.cur];
+ const done=q.every(x=>S.mc[x.no]&&S.mc[x.no]!=='?'),cnt=q.filter(x=>!S.mc[x.no]).length,rg=q.filter(x=>S.mc[x.no]==='?').length;
+ A.innerHTML=hdr('Bagian 1 • Pilihan Ganda (15 menit)')+`<div class="card"><div class="nav">${q.map((x,i)=>`<button class="${S.mc[x.no]==='?'?'rg':S.mc[x.no]?'ok':''} ${i===S.cur?'cu':''}" onclick="S.cur=${i};dMC()">${x.no}</button>`).join('')}</div><p class="sub"><span style="color:var(--p)">■</span> terjawab &nbsp;<span style="color:var(--o)">■</span> ragu-ragu &nbsp;■ kosong</p></div>
+ <div class="card"><b>Soal ${it.no}</b><p style="white-space:pre-line">${esc(it.soal)}</p>${Object.entries(it.pilihan).map(([k,v])=>`<button class="opt ${S.mc[it.no]===k?'sel':''}" onclick="pick(${it.no},'${k}')">${k}. ${esc(v)}</button>`).join('')}<button class="opt ${S.mc[it.no]==='?'?'sel':''}" onclick="pick(${it.no},'?')" style="border-color:var(--o)">⚑ Ragu-ragu / Lewati</button>
+ <p><button class="gh" ${S.cur?'':'disabled'} onclick="S.cur--;dMC()">◀ Sebelumnya</button> <button class="gh" ${S.cur<q.length-1?'':'disabled'} onclick="S.cur++;dMC()">Berikutnya ▶</button></p></div>
+ <div class="card">${done?'<span class="ok2">Semua soal sudah terjawab.</span>':`<div class="warn">Belum bisa dikirim: ${cnt} nomor belum dijawab, ${rg} ragu-ragu.</div>`}<p><button class="or" ${done?'':'disabled'} onclick="setPh('mj',10)">Kirim PG &amp; Lanjut ke Menjodohkan</button></p></div>`}
+function pick(n,k){S.mc[n]=k;save();dMC()}
+function dMJ(){const q=Q.menjodohkan;
+ A.innerHTML=hdr('Bagian 2 • Menjodohkan (10 menit)')+`<div class="card"><p>${esc(q.instruksi)}</p>${q.soal.map(x=>`<label><b>${x.no}.</b> ${esc(x.kolom_A)}</label><select onchange="S.mj[${x.no}]=this.value;save()"><option value="">— pilih jawaban —</option>${x.pilihan_jawaban_kolom_B.map(o=>`<option ${S.mj[x.no]===o?'selected':''}>${esc(o)}</option>`).join('')}</select>`).join('')}<div class="warn">Bagian ini harus dikerjakan sampai timer 10 menit habis. Setelah itu kamu otomatis dialihkan ke soal Essay.</div></div>`}
+function dES(){const q=Q.essay;
+ A.innerHTML=hdr('Bagian 3 • Essay (15 menit)')+`<div class="warn">⚠ Setiap nomor wajib dijawab minimal 10 kata.</div>`+q.map(x=>`<div class="card"><b>${x.no}.</b> ${esc(x.soal)}<textarea rows="5" oninput="S.es[${x.no}]=this.value;save();wc()" id="e${x.no}">${esc(S.es[x.no]||'')}</textarea><span class="sub" id="w${x.no}"></span></div>`).join('')+`<div class="card"><p><button class="or" id="sb" onclick="submit()">Kirim Semua Jawaban</button></p></div>`;wc()}
+function wc(){let ok=true;Q.essay.forEach(x=>{const n=words(S.es[x.no]||''),e=$('#w'+x.no);if(e){e.textContent=n+' kata'+(n<10?' — minimal 10 kata!':' ✓');e.style.color=n<10?'#ff6b6b':'#5dff9a'}if(n<10)ok=false});const b=$('#sb');if(b)b.disabled=!ok}
+async function submit(){
+ let r;try{r=await api('submit',{name:S.name,kelas:S.kelas,token:S.token,mc:S.mc,mj:S.mj,es:S.es})}catch(e){S.phase='es';save();dES();return notice('Gagal mengirim jawaban, periksa koneksi lalu tekan Kirim lagi.')}
+ if(!r.ok){S.phase='es';save();dES();return notice(r.msg)}
+ S.phase='done';S.result=r.sub;delete S.q;save();clearInterval(window.TI);resView(r.sub)}
+function fin(s){const es=Object.values(s.esc||{}).reduce((a,b)=>a+(+b||0),0),mm=Q?Q.essay.reduce((a,x)=>a+mx(x),0):100,p=es/mm*100;return{es,mm,p:Math.round(p),f:Math.round(s.mcS*.5+s.mjS*.2+p*.3)}}
+function resView(s){V='res';const f={es:s.esSum,mm:s.esMax,f:s.final};
+ A.innerHTML=kop()+`<div class="card"><h3>Hasil: ${esc(s.name)} (${esc(s.kelas)})</h3><div class="grid3"><div>Pilihan Ganda<div class="sc">${s.mcS}</div>${s.mcC} benar</div><div>Menjodohkan<div class="sc">${s.mjS}</div>${s.mjC} benar</div><div>Essay<div class="sc">${s.graded?f.es+'/'+f.mm:'⏳'}</div>${s.graded?'':'Menunggu penilaian guru'}</div></div>${s.graded?`<hr><div>Nilai Akhir <span class="sc">${f.f}</span> • Grade <span class="sc">${grade(f.f)}</span><p>Catatan guru: ${esc(s.comment||'-')}</p></div>`:''}<button onclick="home()">Beranda</button></div>`}
+function cari(){V='cari';A.innerHTML=kop()+`<div class="card"><h3>Lihat Hasil</h3><label>Nama lengkap atau token ujian</label><input id="q"><p><button class="or" onclick="doCari()">Cari</button> <button class="gh" onclick="home()">Kembali</button></p><div id="rs"></div></div>`}
+async function doCari(){const v=$('#q').value.trim();if(!v)return;$('#rs').textContent='Mencari…';
+ try{const r=await api('lookup',{q:v});window.RS=r.subs||[];
+ $('#rs').innerHTML=RS.length?RS.map((s,i)=>`<button class="opt" onclick="resView(RS[${i}])">${esc(s.name)} — ${esc(s.kelas)}</button>`).join(''):'<p class="no">Data tidak ditemukan.</p>'}catch(e){$('#rs').textContent='Gagal memuat data.'}}
+/* ===== GURU ===== */
+async function tLoad(tab){let r;try{r=await api('tGet',{pass:PASS})}catch(e){return notice('Gagal terhubung ke server.')}
+ if(!r.ok){PASS='';guru();return notice(r.msg)}
+ CFG=r.token?{token:r.token}:null;Q=r.q;SUBS=r.subs.sort((a,b)=>a.name.localeCompare(b.name));guru(tab||'soal')}
+function guru(tab){V='guru';
+ if(!PASS)return A.innerHTML=kop()+`<div class="card"><h3>Login Guru</h3><label>Password</label><input type="password" id="pw"><p><button class="or" onclick="PASS=$('#pw').value;tLoad()">Masuk</button> <button class="gh" onclick="home()">Kembali</button></p></div>`;
+ tab=typeof tab==='string'?tab:'soal';window.GT=tab;
+ A.innerHTML=kop()+`<div class="tabs"><button class="${tab==='soal'?'or':'gh'}" onclick="guru('soal')">Soal &amp; Token</button><button class="${tab==='hasil'?'or':'gh'}" onclick="guru('hasil')">Hasil Siswa</button><button class="${tab==='analisis'?'or':'gh'}" onclick="guru('analisis')">Analisis</button><button class="gh" onclick="tLoad('${tab}')">⟳ Muat Ulang</button><button class="gh" onclick="home()">Beranda</button></div><div id="g"></div>`;
+ tab==='soal'?gSoal():tab==='hasil'?gHasil():gAnal()}
+function gSoal(){$('#g').innerHTML=`<div class="card"><h3>Token Ujian</h3><div class="big">${CFG?CFG.token:'------'}</div><p style="text-align:center"><button onclick="newTok()" ${CFG?'':'disabled'}>Generate Token Baru</button></p></div><div class="card"><h3>Unggah Soal (JSON)</h3><input type="file" id="f" accept=".json,application/json" onchange="upl(this.files[0])"><div id="info">${Q?`Soal aktif: ${Q.pilihan_ganda.length} PG, ${Q.menjodohkan.soal.length} menjodohkan, ${Q.essay.length} essay.`:'Belum ada soal.'}</div><p><button class="or" ${Q?'':'disabled'} onclick="printSoal()">🖨 Cetak Soal Saja</button></p></div>`}
+const gen=()=>String(Math.floor(100000+Math.random()*900000));
+async function newTok(){try{const r=await api('tNewToken',{pass:PASS});if(!r.ok)return notice(r.msg);tLoad('soal')}catch(e){notice('Gagal membuat token.')}}
+async function upl(f){if(!f)return;let t=await f.text();
+ t=t.replace(/\{[^{}]*"A"[^{}]*\}/g,b=>{const m=b.match(/"B"\s*:/g);return m&&m.length>1&&!/"D"\s*:/.test(b)?b.replace(/("B"\s*:[\s\S]*?)"B"\s*:/,'$1"D":'):b});
+ let j;try{j=JSON.parse(t);if(!j.pilihan_ganda||!j.menjodohkan||!j.essay)throw 0}catch(e){return notice('File JSON tidak valid.')}
+ try{const r=await api('tUpload',{pass:PASS,q:j});if(!r.ok)return notice(r.msg);await tLoad('soal');notice('Soal berhasil diunggah. Bagikan token ke siswa.')}catch(e){notice('Gagal menyimpan ke server.')}}
+function gHasil(){if(!Q)return $('#g').innerHTML='<div class="card">Unggah soal dulu.</div>';
+ $('#g').innerHTML=`<div class="card"><h3>Hasil Siswa (${SUBS.length})</h3><div style="overflow-x:auto"><table><tr><th>Nama</th><th>Kelas</th><th>PG</th><th>Jodoh</th><th>Essay</th><th>Akhir</th><th></th></tr>${SUBS.map((s,i)=>{const f=fin(s);return`<tr><td>${esc(s.name)}</td><td>${esc(s.kelas)}</td><td>${s.mcS}</td><td>${s.mjS}</td><td>${s.graded?f.es+'/'+f.mm:'⏳'}</td><td>${s.graded?f.f+' ('+grade(f.f)+')':'-'}</td><td><button onclick="detail(${i})">Buka</button></td></tr>`}).join('')}</table></div></div>`}
+function detail(i){const s=SUBS[i];window.CS=i;const P=Q.pilihan_ganda,M=Q.menjodohkan.soal,E=Q.essay;
+ $('#g').innerHTML=`<div class="card"><h3>${esc(s.name)} — ${esc(s.kelas)}</h3><button class="gh" onclick="gHasil()">◀ Daftar</button> <button class="or" onclick="printHasil(${i})">🖨 Cetak Hasil</button>
+ <h4>Pilihan Ganda: ${s.mcC}/${P.length}</h4><div style="overflow-x:auto"><table><tr><th>No</th><th>Jawaban</th><th>Kunci</th><th></th></tr>${P.map(x=>{const a=s.mc[x.no]||'-',ok=a===x.kunci_jawaban;return`<tr><td>${x.no}</td><td>${a==='?'?'ragu':a}</td><td>${x.kunci_jawaban}</td><td class="${ok?'ok2':'no'}">${ok?'✓':'✗'}</td></tr>`}).join('')}</table></div>
+ <h4>Menjodohkan: ${s.mjC}/${M.length}</h4><table>${M.map(x=>{const a=s.mj[x.no]||'-',ok=a===x.kunci_jawaban;return`<tr><td>${x.no}</td><td>${esc(a)}</td><td>${esc(x.kunci_jawaban)}</td><td class="${ok?'ok2':'no'}">${ok?'✓':'✗'}</td></tr>`}).join('')}</table>
+ <h4>Essay</h4>${E.map(x=>`<div class="card"><b>${x.no}.</b> ${esc(x.soal)}<p style="white-space:pre-wrap;border-left:3px solid var(--o);padding-left:8px">${esc(s.es[x.no]||'(kosong)')}</p><div class="sub">Pedoman: ${esc(x.pedoman_penskoran)}</div>Skor (maks ${mx(x)}): <input type="number" min="0" max="${mx(x)}" id="s${x.no}" value="${s.esc?.[x.no]??''}" style="width:100px"></div>`).join('')}
+ <label>Catatan guru</label><textarea id="cm" rows="3">${esc(s.comment||'')}</textarea><button class="or" onclick="saveG()">Simpan Nilai &amp; Grade</button></div>`}
+async function saveG(){const s=SUBS[CS],e={};Q.essay.forEach(x=>{e[x.no]=Math.min(mx(x),Math.max(0,+$('#s'+x.no).value||0))});
+ try{const c=$('#cm').value,r=await api('tGrade',{pass:PASS,id:s.id,esc:e,comment:c});if(!r.ok)return notice(r.msg);s.esc=e;s.comment=c;s.graded=true;const f=fin(s);notice(`Tersimpan. Nilai akhir ${f.f}, grade ${grade(f.f)}.`)}catch(x){notice('Gagal menyimpan.')}}
+function gAnal(){if(!Q||!SUBS.length)return $('#g').innerHTML='<div class="card">Belum ada data siswa.</div>';const n=SUBS.length,pc=(c)=>Math.round(c/n*100);
+ const row=(l,c)=>`<tr><td>${l}</td><td style="width:50%"><div class="bar"><b style="width:${pc(c)}%"></b></div></td><td>${pc(c)}%</td></tr>`;
+ $('#g').innerHTML=`<div class="card"><h3>Analisis Butir (${n} siswa) — % benar</h3><h4>Pilihan Ganda</h4><table>${Q.pilihan_ganda.map(x=>row('No '+x.no,SUBS.filter(s=>s.mc[x.no]===x.kunci_jawaban).length)).join('')}</table><h4>Menjodohkan</h4><table>${Q.menjodohkan.soal.map(x=>row('No '+x.no,SUBS.filter(s=>s.mj[x.no]===x.kunci_jawaban).length)).join('')}</table><h4>Rata-rata Essay (dari yang sudah dinilai)</h4><table>${Q.essay.map(x=>{const g=SUBS.filter(s=>s.graded);const a=g.length?g.reduce((t,s)=>t+(+s.esc?.[x.no]||0),0)/g.length:0;return`<tr><td>No ${x.no}</td><td>${a.toFixed(1)} / ${mx(x)}</td></tr>`}).join('')}</table></div>`}
+function doPrint(h){$('#print').innerHTML=h;setTimeout(()=>window.print(),100)}
+function printSoal(){const P=Q.pilihan_ganda,M=Q.menjodohkan;doPrint(kopP()+`<p>Nama: ............................ Kelas: ........</p><h3>A. Pilihan Ganda</h3>${P.map(x=>`<div style="margin-bottom:8px;white-space:pre-line">${x.no}. ${esc(x.soal)}<br>${Object.entries(x.pilihan).map(([k,v])=>k+'. '+esc(v)).join('<br>')}</div>`).join('')}<h3>B. Menjodohkan</h3><p>${esc(M.instruksi)}</p>${M.soal.map(x=>`<div>${x.no}. ${esc(x.kolom_A)} → ....................</div>`).join('')}<p><b>Pilihan:</b> ${esc(M.soal[0].pilihan_jawaban_kolom_B.join(' | '))}</p><h3>C. Essay (minimal 10 kata per nomor)</h3>${Q.essay.map(x=>`<p>${x.no}. ${esc(x.soal)}<br><br><br></p>`).join('')}`)}
+function printHasil(i){const s=SUBS[i],f=fin(s);doPrint(kopP()+`<h3>Hasil Ulangan: ${esc(s.name)} (${esc(s.kelas)})</h3><table><tr><th>Pilihan Ganda</th><th>Menjodohkan</th><th>Essay</th><th>Nilai Akhir</th><th>Grade</th></tr><tr><td>${s.mcS} (${s.mcC} benar)</td><td>${s.mjS} (${s.mjC} benar)</td><td>${s.graded?f.es+'/'+f.mm:'-'}</td><td>${s.graded?f.f:'-'}</td><td>${s.graded?grade(f.f):'-'}</td></tr></table><h4>Pilihan Ganda</h4><table><tr><th>No</th><th>Jawaban</th><th>Kunci</th><th>Hasil</th></tr>${Q.pilihan_ganda.map(x=>{const a=s.mc[x.no]||'-';return`<tr><td>${x.no}</td><td>${a}</td><td>${x.kunci_jawaban}</td><td>${a===x.kunci_jawaban?'Benar':'Salah'}</td></tr>`}).join('')}</table><h4>Essay</h4>${Q.essay.map(x=>`<p><b>${x.no}.</b> ${esc(x.soal)}<br><i>${esc(s.es[x.no]||'-')}</i><br>Skor: ${s.esc?.[x.no]??'-'}/${mx(x)}</p>`).join('')}<p>Catatan guru: ${esc(s.comment||'-')}</p>`)}
+
+/* ===== KUNCI SISWA ===== */
+const lockOn=()=>V!=='guru';
+document.body.classList.add('lock');
+['contextmenu','copy','cut','paste','dragstart'].forEach(ev=>document.addEventListener(ev,e=>{if(lockOn())e.preventDefault()}));
+document.addEventListener('keydown',e=>{if(!lockOn())return;const k=e.key.toLowerCase();if(e.key==='F12'||((e.ctrlKey||e.metaKey)&&['c','v','x','a','p','s','u'].includes(k))||((e.ctrlKey||e.metaKey)&&e.shiftKey&&['i','j','c'].includes(k)))e.preventDefault()});
+const inFs=()=>document.fullscreenElement||document.webkitFullscreenElement;
+function goFs(){try{const r=document.documentElement,f=r.requestFullscreen||r.webkitRequestFullscreen;if(f)f.call(r)}catch(e){}}
+function fsCheck(){if(V==='exam'&&S&&S.phase!=='done'&&!inFs()&&!$('#fsb2')){const d=document.createElement('div');d.id='fsb2';d.className='ov';d.innerHTML='<div class="card" style="max-width:420px"><p>Ujian harus dikerjakan dalam layar penuh. Timer tetap berjalan.</p><button class="or">Kembali ke Layar Penuh</button></div>';d.querySelector('button').onclick=()=>{goFs();d.remove()};document.body.appendChild(d)}}
+document.addEventListener('fullscreenchange',fsCheck);document.addEventListener('webkitfullscreenchange',fsCheck);
+home();init();if(S&&S.phase!=='done'&&S.phase!=='x')setTimeout(()=>{},0);
+</script></body></html>
